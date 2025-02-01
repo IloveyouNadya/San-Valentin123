@@ -14,10 +14,11 @@
             margin: 0;
             background: linear-gradient(to right, #ff5f6d, #ffc371);
             font-family: 'Arial', sans-serif;
-            color: white;
             text-align: center;
         }
         h1 {
+            font-family: 'Berlin Sans FB Demi', sans-serif;
+            color: black;
             font-size: 2.5em;
             margin-bottom: 20px;
         }
@@ -37,18 +38,25 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-        button:hover {
-            background: rgba(0, 0, 0, 0.1);
+        button#yesButton {
+            background-color: green;
+            color: white;
+        }
+        button#noButton {
+            background-color: red;
+            color: white;
         }
         .message {
+            font-family: 'Arial Black', sans-serif;
             font-size: 1.5em;
+            color: white;
         }
     </style>
 </head>
 <body>
     <h1>¿Quieres ser mi San Valentín?</h1>
     <div class="gif-container">
-        <img src="https://media.giphy.com/media/l4FGGafcOHmrlQxG0/giphy.gif" alt="Amor" width="300">
+        <img src="https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif" alt="Ositos abrazándose con amor" width="300">
     </div>
     <div class="buttons">
         <button id="yesButton">Sí</button>
@@ -58,12 +66,22 @@
 
     <script>
         document.getElementById('yesButton').addEventListener('click', function() {
-            document.getElementById('message').innerText = "Te amo mucho mi reina bella <3";
+            document.body.innerHTML = `
+                <div class="message">Te amo mucho mi reina bella <3</div>
+                <div class="gif-container">
+                    <img src="https://media.giphy.com/media/l3vRkIJBb1Y5lQ6lC/giphy.gif" alt="Corazón" width="300">
+                </div>
+            `;
         });
 
         document.getElementById('noButton').addEventListener('click', function() {
-            document.getElementById('message').innerText = "Okey, seguro tienes a otro";
+            document.body.innerHTML = `
+                <div class="message">Okey, seguro tienes a otro</div>
+                <div class="gif-container">
+                    <img src="https://media.giphy.com/media/3oEjI5VtIhHvK37WYo/giphy.gif" alt="Dedo arriba" width="300">
+                </div>
+            `;
         });
     </script>
 </body>
-</html
+</html>
